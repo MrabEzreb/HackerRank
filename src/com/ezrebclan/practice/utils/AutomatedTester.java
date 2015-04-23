@@ -5,6 +5,8 @@ import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
+import com.ezrebclan.practice.algorithms.Reader;
+import com.ezrebclan.practice.algorithms.ServiceLane;
 import com.ezrebclan.practice.algorithms.SolveMeFirst;
 import com.ezrebclan.practice.algorithms.SolveMeSecond;
 import com.ezrebclan.practice.algorithms.UtopianTree;
@@ -12,7 +14,43 @@ import com.ezrebclan.practice.algorithms.UtopianTree;
 public class AutomatedTester {
 	
 	public static void main(final String[] args) {
-		utopianTree();
+		ServiceLaneTest();
+	}
+	
+	private static void ServiceLaneTest() {
+		String[] args = {
+			"8 5",
+			"2 3 1 2 3 2 3 3",
+			"0 3",
+			"4 6",
+			"6 7",
+			"3 5",
+			"0 7"
+		};
+		for (String string : args) {
+			writeToSysin(string);
+		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		ServiceLane s = new ServiceLane();
+		s.main(null);
+	}
+	
+	@SuppressWarnings("unused")
+	private static void getArgsTest() {
+		String[] arg = {
+			"1",
+			"2",
+			"3"
+		};
+		for (String string : arg) {
+			writeToSysin(string);
+		}
+		Reader r = new Reader();
+		System.out.println(r.getLines());
 	}
 	
 	@SuppressWarnings("unused")
@@ -51,6 +89,7 @@ public class AutomatedTester {
 		s.main(null);
 	}
 	
+	@SuppressWarnings("unused")
 	private static void utopianTree() {
 		String[] args = {
 				"3",
